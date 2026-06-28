@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مسبحتي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="counter-pane" aria-labelledby="app-title">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">مسبحة وأذكار يومية</p>
+            <h1 id="app-title">مسبحتي</h1>
+          </div>
+          <button class="icon-button" id="sound-toggle" type="button" aria-label="تشغيل الصوت">
+            <span aria-hidden="true">♪</span>
+          </button>
+        </div>
+
+        <div class="dhikr-display" aria-live="polite">
+          <p id="dhikr-category">التسبيح</p>
+          <h2 id="dhikr-text">سبحان الله</h2>
+          <p id="dhikr-note">اضغط على الدائرة الكبيرة للعد.</p>
+        </div>
+
+        <button class="tasbeeh-button" id="count-button" type="button" aria-label="زيادة العد">
+          <span class="ring ring-outer"></span>
+          <span class="ring ring-inner"></span>
+          <strong id="count-value">0</strong>
+          <small>اضغط للتسبيح</small>
+        </button>
+
+        <div class="target-row" role="group" aria-label="هدف التسبيح">
+          <button class="target-choice is-active" type="button" data-target="33">33</button>
+          <button class="target-choice" type="button" data-target="99">99</button>
+          <button class="target-choice" type="button" data-target="100">100</button>
+          <button class="target-choice" type="button" data-target="1000">1000</button>
+        </div>
+
+        <div class="progress-wrap" aria-label="التقدم">
+          <div class="progress-info">
+            <span>التقدم</span>
+            <strong><span id="progress-value">0</span>%</strong>
+          </div>
+          <div class="progress-track">
+            <span id="progress-bar"></span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="secondary-button" id="reset-button" type="button">تصفير</button>
+          <button class="secondary-button" id="next-button" type="button">الذكر التالي</button>
+        </div>
+      </section>
+
+      <aside class="azkar-pane" aria-labelledby="azkar-title">
+        <figure class="visual-strip">
+          <img src="assets/tasbeeh-beads.png" alt="مسبحة على سجادة هادئة" />
+        </figure>
+
+        <div class="section-heading">
+          <p class="eyebrow">لا تنس الأذكار</p>
+          <h2 id="azkar-title">أذكار مختارة</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="أنواع الأذكار">
+          <button class="tab is-active" type="button" data-filter="all">الكل</button>
+          <button class="tab" type="button" data-filter="morning">الصباح</button>
+          <button class="tab" type="button" data-filter="evening">المساء</button>
+          <button class="tab" type="button" data-filter="after-prayer">بعد الصلاة</button>
+        </div>
+
+        <div class="azkar-list" id="azkar-list"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
